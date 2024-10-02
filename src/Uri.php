@@ -30,6 +30,7 @@ use function strrpos;
 use function strtolower;
 use function strtoupper;
 use function substr;
+use function get_class;
 
 use const PREG_SPLIT_DELIM_CAPTURE;
 use const PREG_SPLIT_NO_EMPTY;
@@ -174,7 +175,7 @@ class Uri implements UriInterface
         } elseif ($uri !== null) {
             throw new Exception\InvalidArgumentException(sprintf(
                 'Expecting a string or a URI object, received "%s"',
-                is_object($uri) ? $uri::class : gettype($uri)
+                is_object($uri) ? get_class($uri) : gettype($uri)
             ));
         }
     }
