@@ -1300,7 +1300,7 @@ class Uri implements UriInterface
             && isset(static::$defaultPorts[$scheme])
             && ($port === static::$defaultPorts[$scheme])
         ) {
-            return;
+            return null;
         }
 
         return $port;
